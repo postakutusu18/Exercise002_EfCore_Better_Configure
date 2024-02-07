@@ -45,7 +45,7 @@ app.MapGet("companies/{companyId:int}",async (int companyId,DatabaseContext dbCo
 
     if (company is null)
     {
-        return Results.NotFound(@"The Company with Id '{companyId}' was not found");
+        return Results.NotFound($"The Company with Id '{companyId}' was not found");
     }
     var response = new CompanyResponse(company.Id, company.Name);
     return Results.Ok(response);
